@@ -72,34 +72,23 @@
 
       function saveData(el){
 
-        // for(let i=9; i<=17; i++){
-        //   var getInput = document.querySelector('#event'+i).value
-        //   if (getInput == null){
-        //   } else {
-        //     localStorage.setItem("entry"+i, JSON.stringify(getInput))
-        //   }
-        //   console.log(getInput)
-        // }
-
-          let description = el.previousElementSibling.value
-          let parent = el.parentElement;
-
-          console.log(description)
-          console.log(parent)
-          localStorage.setItem(parent.id, description)
-
+        for(let i=9; i<=17; i++){
+          var getInput = document.querySelector('#event'+i).value
+          if (getInput == null){
+          } else {
+            localStorage.setItem("entry"+i, JSON.stringify(getInput))
+          }
+          console.log(getInput)
+        }
       }
-      
-      $('.description').attr('id').val(localStorage.getItem("hour-9"))
-      
         
-      // function renderData(){
-      //   for(let i=9; i<=17; i++){
-      //     var info = JSON.parse(localStorage.getItem("entry"+i))
-      //     document.querySelector("#event"+i).innerHTML = info
-      //   }
-      // }
-      // renderData()
+      function renderData(){
+        for(let i=9; i<=17; i++){
+          var info = JSON.parse(localStorage.getItem("entry"+i))
+          document.querySelector("#event"+i).innerHTML = info
+        }
+      }
+      renderData()
 
 
     </script>
